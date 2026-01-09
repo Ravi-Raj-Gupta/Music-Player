@@ -31,27 +31,37 @@ clear.addEventListener('click', () => {
 
 // getting songs from the songs folder
 
+// async function getsongs() {
+//     try {
+//         let a = await fetch("./songs/")
+//         let response = await a.text()
+//         console.log("Songs response:", response)
+//         let div = document.createElement("div")
+//         div.innerHTML = response
+//         let as = div.getElementsByTagName("a")
+//         let songs = []
+//         for (let index = 0; index < as.length; index++) {
+//             const element = as[index];
+//             if (element.href.endsWith(".mp3")) {
+//                 songs.push(element.href.split("/songs/")[1])
+//             }
+//         }
+//         console.log("Songs fetched:", songs)
+//         return songs
+//     } catch (error) {
+//         console.error("Error fetching songs:", error)
+//         return []
+//     }
+// }
+
 async function getsongs() {
-    try {
-        let a = await fetch("./songs/")
-        let response = await a.text()
-        console.log("Songs response:", response)
-        let div = document.createElement("div")
-        div.innerHTML = response
-        let as = div.getElementsByTagName("a")
-        let songs = []
-        for (let index = 0; index < as.length; index++) {
-            const element = as[index];
-            if (element.href.endsWith(".mp3")) {
-                songs.push(element.href.split("/songs/")[1])
-            }
-        }
-        console.log("Songs fetched:", songs)
-        return songs
-    } catch (error) {
-        console.error("Error fetching songs:", error)
-        return []
-    }
+  try {
+    const res = await fetch("songs/songs.json")
+    return await res.json()
+  } catch (err) {
+    console.error("Failed to load songs.json", err)
+    return []
+  }
 }
 
 // Function to extract song details from filename
@@ -299,7 +309,7 @@ function initializeSlider() {
 
 const playmusic = (track, pause = false) => {
     // let audio = new Audio("/songs/" + track)
-    currentsong.src = "/songs/" + track + ".mp3"
+    currentsong.src = "/songs/" + track 
     if(!pause){
         currentsong.play()
         play.src = "pause.svg"
