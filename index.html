@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=play_circle" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <leftnav>
+            <div class="logo center">
+                <img src="logo.svg" alt="">
+            </div>
+            <div class="home center">
+                <img src="home.svg" alt="">
+            </div>
+            <div class="spotify-search">
+                <!-- Search Icon (fa-search) -->
+                <span class="icon left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 512 512">
+                        <path d="M505 442.7L405.3 343c28.4-35.3 45.7-80 45.7-128.5C451 96.5 
+               355.5 1 236.5 1S22 96.5 22 214.5 117.5 428 236.5 428c48.4 
+               0 93.2-17.3 128.5-45.7l99.7 99.7c9.4 9.4 24.6 9.4 33.9 
+               0l6.4-6.4c9.4-9.4 9.4-24.6 0-33.9zM236.5 386c-94.6 0-171.5-76.9-171.5-171.5S141.9 
+               43 236.5 43s171.5 76.9 171.5 171.5S331.1 386 236.5 386z" />
+                    </svg>
+                </span>
+
+                <input type="text" class="input" placeholder="What do you want to listen to?">
+
+                <!-- Clear Icon (fa-times) -->
+                <span class="icon right clear">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 352 512">
+                        <path d="M242.72 256l100.07-100.07c12.28-12.28 
+               12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 
+               0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 
+               0L9.21 111.45c-12.28 12.28-12.28 32.19 0 
+               44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 
+               0 44.48l22.24 22.24c12.28 12.28 32.19 12.28 44.48 
+               0L176 322.72l100.07 100.07c12.28 12.28 32.19 12.28 
+               44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 
+               0-44.48L242.72 256z" />
+                    </svg>
+                </span>
+            </div>
+        </leftnav>
+
+        <div class="rightnav">
+            <div class="firstpart">
+                <span>Premium</span>
+                <span>Support</span>
+                <span>Download</span>
+            </div>
+            <div class="line"></div>
+            <div class="secondpart">
+                <span>Install App</span>
+                <span>Sign Up</span>
+            </div>
+            <button>Log In</button>
+        </div>
+    </nav>
+
+    <!-- home section -->
+    <div class="container">
+        <div class="left-container">
+            <div class="library">
+                <div class="library-header">
+                    <div class="library-heading">Your Library</div>
+                    <div class="plus"><img src="plus.svg" alt=""></div>
+                </div>
+                <div class="songs-list">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="#">Legal</a>
+                    <a href="#">Safety & Privacy Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">About Ads</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-language">
+                    <button class="language-btn">
+                        <img class="globe-icon" src="languge.svg" alt="">
+
+                        English
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- css to design the right container -->
+        <div class="right-container">
+            <div class="right-heading">Trending Songs</div>
+            <div style="position: relative; display: flex; align-items: center;">
+                <button id="prev-slider" style="position: absolute; left: 0; z-index: 10; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 12px; border-radius: 50%; cursor: pointer; font-size: 18px; display: none;">❮</button>
+                <div class="card-container" id="cardContainer">
+                </div>
+                <button id="next-slider" style="position: absolute; right: 0; z-index: 10; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 12px; border-radius: 50%; cursor: pointer; font-size: 18px; display: none;">❯</button>
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="songinfo">
+                    <div class="songname"></div>
+                    <div class="playbar-icons">
+                        <img id="prev" src="prev.svg" alt="">
+                        <img id="play" src="play.svg" alt="">
+                        <img id="next" src="next.svg" alt="">
+                    </div>
+                    <div class="songtime"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
