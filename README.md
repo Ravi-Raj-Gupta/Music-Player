@@ -4,15 +4,6 @@ A simple and interactive **Music Player** built using **HTML, CSS, and JavaScrip
 
 ---
 
-## 🌐 Live Demo
-
-The project is deployed and live here:  
-
-
-*(Replace the above link with your actual Music Player live URL after deployment)*
-
----
-
 ## 📌 Overview
 
 This Music Player uses the HTML `<audio>` element and JavaScript to control playback. Users can:
